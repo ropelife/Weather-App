@@ -1,4 +1,6 @@
+import logo from './logo.svg';
 import './App.css';
+import WeatherUI from './WeatherUI';
 
 import React, { useState } from 'react';
 import axios from 'axios';
@@ -12,9 +14,9 @@ const App = () => {
     try {
       setError('');
       const response = await axios.get(
-        `http://localhost:5000/weather?city=${city}`
+        `http://localhost:5001/weather?city=${city}`
       );
-      console.log('Response ' + response);
+      console.log('Response ' + response.data.name);
       setWeather(response.data);
     } catch (err) {
       setError('Unable to fetch weather data');
@@ -22,24 +24,13 @@ const App = () => {
   };
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      <h1>Weather App</h1>
-      <input
-        type="text"
-        placeholder="Enter city"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-      />
-      <button onClick={fetchWeather}>Get Weather</button>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {weather && (
-        <div>
-          <h2>Weather in {weather.Location}</h2>
-          <p>Temperature: {weather.Temperature_C}°C</p>
-          <p>Condition: {weather.Humidity_pct}</p>
-        </div>
-      )}
-    </div>
+    <WeatherUI
+      city={city}
+      setCity={setCity}
+      fetchWeather={fetchWeather}
+      error={error}
+      weather={weather}
+    />
   );
 };
 
