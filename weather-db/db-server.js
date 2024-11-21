@@ -55,7 +55,6 @@ app.post('/insert-weather', async (req, res) => {
     const { Location, data } = req.body;
 
     // Call insertDataToDB function to insert data into MongoDB
-    console.log('city ', Location, 'data ', data);
     const result = await insertDataToDB(Location, data);
 
     // Return a success response
@@ -69,7 +68,6 @@ app.post('/insert-weather', async (req, res) => {
 // API route to fetch data
 app.get('/data', async (req, res) => {
   const cityName = req.query.city; // Get the city name from query parameter
-  console.log('Received city:', cityName);
 
   if (!cityName) {
     return res.status(400).send({ error: 'City name is required' });
@@ -83,7 +81,6 @@ app.get('/data', async (req, res) => {
       const db = await connectToDatabase();
       const collection = db.collection(COLLECTION_NAME);
       const query = { Location: cityName }; // Filter for the city
-      //   const sort = { Date_Time: -1 };
       const latestData = await collection.findOne(query);
       if (latestData) {
         res.status(200).json(latestData);

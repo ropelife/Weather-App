@@ -12,11 +12,10 @@ const App = () => {
 
   const fetchWeather = async () => {
     try {
+      const backendUrl =
+        process.env.REACT_APP_BACKEND_URL || 'http://localhost:5001';
       setError('');
-      const response = await axios.get(
-        `http://localhost:5001/weather?city=${city}`
-      );
-      console.log('Response ' + response.data.name);
+      const response = await axios.get(`${backendUrl}/weather?city=${city}`);
       setWeather(response.data);
     } catch (err) {
       setError('Unable to fetch weather data');
