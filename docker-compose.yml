@@ -9,7 +9,7 @@ services:
     depends_on:
       - backend
     environment:
-      - REACT_APP_BACKEND_URL=http://34.70.146.172:5001
+      - REACT_APP_BACKEND_URL=http://localhost:5001
 
   backend:
     build:
@@ -19,7 +19,7 @@ services:
     depends_on:
       - database
     environment:
-      - DB_SERVER_URL=http://34.70.146.172:4000
+      - DB_SERVER_URL=http://database:4000
 
   database:
     build:
