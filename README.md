@@ -41,6 +41,10 @@ sudo chmod +x /usr/local/bin/docker-compose`
 
 Currently, the application is hosted on the following URL, http://34.70.146.172:3000/ 
 
+<img width="1435" alt="Screenshot 2024-11-21 at 2 55 12 AM" src="https://github.com/user-attachments/assets/6315ce00-507f-4c70-8727-82edc0667b02">
+<img width="1436" alt="Screenshot 2024-11-21 at 2 55 32 AM" src="https://github.com/user-attachments/assets/e9b256dc-b75a-4377-9be1-fee8ec5cf2b7">
+<img width="1436" alt="Screenshot 2024-11-21 at 2 57 25 AM" src="https://github.com/user-attachments/assets/5de2ff5d-3104-46a6-bc83-9746043d6e8f">
+
 ## Future Scope:
 Due to limited time frame, there were many features that I wanted to implement, some of which are listed below,
 
