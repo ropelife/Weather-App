@@ -19,7 +19,7 @@ services:
     depends_on:
       - database
     environment:
-      - DB_SERVER_URL=http://database:4000
+      - DB_SERVER_URL=http://34.70.146.17:4000
 
   database:
     build:
