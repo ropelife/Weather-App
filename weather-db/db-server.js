@@ -1,5 +1,5 @@
 const express = require('express');
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient } = require('mongodb');
 const cors = require('cors');
 require('dotenv').config();
 const { MONGO_URI, DB_NAME, COLLECTION_NAME } = process.env;
@@ -15,18 +15,12 @@ let db;
 
 // Connect to MongoDB
 async function connectToDatabase() {
-//   const config = {
-//   useUnifiedTopology: true,
-//   useNewUrlParser: true,
-// };
+  const config = {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+};
   if (!client) {
-    client = new MongoClient(MONGO_URI, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
+    client = new MongoClient(MONGO_URI, config);
 
     try {
       await client.connect();
