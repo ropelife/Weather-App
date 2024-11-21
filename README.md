@@ -41,10 +41,12 @@ sudo chmod +x /usr/local/bin/docker-compose`
 
 Currently, the application is hosted on the following URL, http://34.70.146.172:3000/ 
 
+## Future Scope:
+Due to limited time frame, there were many features that I wanted to implement, some of which are listed below,
 
-
-
-
+1) Cache Expiry time: Deleting cached data from the database which has exceeded resting time period e.g min, hour, etc. as temperature keeps changing frequently.
+2) Favorite Locations: Allow users to save locations for easy and personalized access.
+3) Recent Searches: Displaying data for recent searches in a seperate tab.
 
 
 
