@@ -56,11 +56,6 @@ app.get('/weather', async (req, res) => {
   try {
     API_KEY = 'f1ec850335ad042181f9c963651eee71';
     const uri = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=imperial&appid=${API_KEY}`;
-    // console.log(uri);
-    // const api_data = await axios.get(uri, {
-    //   params: { q: cityName, appid: API_KEY },
-    // });
-    // console.log('This is api_data ', api_data.data);
 
     const response = await axios.get(`${DATABASE_SERVER_URL}/data`, {
       params: { city: cityName},
