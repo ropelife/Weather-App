@@ -7,9 +7,9 @@ Develop a weather application that takes a city as input and displays the weathe
 
 1) Frontend: I have used React.js to create the frontend. When we start the application, we are routed to a web page which display a search box in a card which allows user to enter a city they want to search the weather.
 The application dynamically renders all the information it acquires giving a clean interface.
-When a user provides a city name and click on seach icon, an API call is made to the next stage of out architecture which is the backend.
+When a user provides a city name and click on seach icon, an API call is made to the next stage of out architecture which is the backend. Also, added a functionality where weather icon changes according to the weather condition. 
 
-2) Backend: Developed by setting up Node.js server using Express. The application is hosted on a designated port. The backend has a single API exposed which accepts input as city name from the frontend and checks if data is already cached in the database by making a API call to our database server. If the data for that city is present, we return the cached data else we have another feature implemented which will hit the OpenWeatherAPI (open-source API to get weather data) and return the weather data to the user and simultaneously cache it.
+2) Backend: Developed by setting up Node.js server using Express. The application is hosted on a designated port. The backend has a single API exposed which accepts input as city name from the frontend and checks if data is already cached in the database by making a API call to our database server. If the data for that city is present, we return the cached data else we have another feature implemented which will hit the OpenWeatherAPI (open-source API to get weather data) and return the weather data to the user and simultaneously cache it there by implementing "Cache-Aside Caching".
 
 3) Database: I am using MongoDB Atlas for storing the data as we can easilty connect to the mongoDB atlas clusters. Also, it has a higher response time than any RDBMS. For connectivity pursposes, I have passed the connectivity credentials thorugh a .env file.
 
@@ -47,6 +47,9 @@ Due to limited time frame, there were many features that I wanted to implement, 
 1) Cache Expiry time: Deleting cached data from the database which has exceeded resting time period e.g min, hour, etc. as temperature keeps changing frequently.
 2) Favorite Locations: Allow users to save locations for easy and personalized access.
 3) Recent Searches: Displaying data for recent searches in a seperate tab.
+4) Integrating kubernetes in the application for smooth deployment.
+5) Expanding the web app to show weather forecast for a day.
+
 
 
 
