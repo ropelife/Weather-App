@@ -50,9 +50,8 @@ Due to limited time frame, there were many features that I wanted to implement, 
 
 1) Cache Expiry time: Deleting cached data from the database which has exceeded resting time period e.g min, hour, etc. as temperature keeps changing frequently.
 2) Favorite Locations: Allow users to save locations for easy and personalized access.
-3) Recent Searches: Displaying data for recent searches in a seperate tab.
-4) Integrating kubernetes in the application for smooth deployment.
-5) Expanding the web app to show weather forecast for a day.
+3) Integrating kubernetes in the application for smooth deployment.
+4) Expanding the web app to show weather forecast for a day.
 
 
 
